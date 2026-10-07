@@ -432,7 +432,7 @@
     })();
     </script>
 
-    {% include 'api' with 'page:body' %}
+    {% include 'api' with 'page:body', page: body %}
     {{ page_body }}
 
     {% if settings.enable_instantpage == true %}
@@ -457,4 +457,13 @@
   <!-- PickyStory end snippet "main_widget_script" -->
    {% include '__footerhash' %}
 </body>
-</html>
+</html>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'api' with 'page:body' %}"
+  to: "{% include 'api' with 'page:body', page: body %}"
+  position: 111937..111985
+{%- endcomment -%}
